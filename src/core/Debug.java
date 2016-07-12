@@ -5,6 +5,8 @@
 package core;
 
 import java.io.PrintStream;
+import java.util.Formatter;
+import java.util.Locale;
 
 /**
  * Debugging info printer with time stamping. This class is not to be actively
@@ -15,6 +17,9 @@ public class Debug {
 	private static int debugLevel = 0;
 	private static long timingStart = -1;
 	private static String timingCause;
+	
+	private static final StringBuilder sb = new StringBuilder();
+	private static final Formatter formatter = new Formatter(sb, Locale.US);
 
 	/**
 	 * Sets the current debug level (smaller level -> more messages)
@@ -67,6 +72,15 @@ public class Debug {
 		p(txt,0,true);
 	}
 
+	/**
+	 * Print the formatted text template.
+	 * @param format Template string with format specifiers
+	 * @param args the objects to insert into the template string
+	 */
+	public static void pfln(String format, Object ... args) {
+		p(formatter.format(format, args).toString());
+	}
+	
 	/**
 	 * Print text to debug output.
 	 * @param txt The text to print

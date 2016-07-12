@@ -13,6 +13,14 @@ import java.util.Locale;
  * used but convenient for temporary debugging.
  */
 public class Debug {
+	/* TODO: Populate these values upon initialization. Requires the explicit
+	 * setting of this stuff at some very high level, most likely in the
+	 * src/core/SimScenario.java file. You'll need to add the appropriate
+	 * config keywords to the namespace.
+	 */
+	private static final String DEBUG_LEVEL_S = "debugLevel";
+	private static final String DEBUG_LOG_FILE_S = "logToFile";
+	
 	private static PrintStream out = System.out;
 	private static int debugLevel = 0;
 	private static long timingStart = -1;
@@ -35,6 +43,14 @@ public class Debug {
 	 */
 	public static void setPrintStream(PrintStream outStrm) {
 		out = outStrm;
+	}
+	
+	/**
+	 * Write all logs to a debug log file.
+	 * @param fileUrl URL of the file to which logs should be written
+	 * @todo Implement this functionality.
+	 */
+	public static void writeLogsToFile(String fileUrl) {
 	}
 
 	/**

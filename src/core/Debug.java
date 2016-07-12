@@ -20,7 +20,7 @@ public class Debug {
 	 * Sets the current debug level (smaller level -> more messages)
 	 * @param level The level to set
 	 */
-	public void setDebugLevel(int level) {
+	public static void setDebugLevel(int level) {
 		debugLevel = level;
 	}
 
@@ -28,7 +28,7 @@ public class Debug {
 	 * Sets print stream of debug output.
 	 * @param outStrm The stream
 	 */
-	public void setPrintStream(PrintStream outStrm) {
+	public static void setPrintStream(PrintStream outStrm) {
 		out = outStrm;
 	}
 
